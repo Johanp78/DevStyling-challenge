@@ -1,0 +1,386 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CSS Variables for Reusability */
+:root {
+  --font-primary: 'Arial', sans-serif;
+  --font-secondary: 'Roboto', sans-serif; /* Secondary font, used for headings */
+  --color-primary: #ff6f61;
+  --color-secondary: #ff3b3b; /* Accent color, often used for hover states */
+  --color-accent: #43c6ac; /* Additional accent color for background gradients */
+  --color-background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  --color-content-bg: rgba(255, 255, 255, 0.9);
+  --color-text-primary: #222;
+  --color-text-secondary: #555;
+  --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 15px rgba(0, 0, 0, 0.2);
+  --border-radius: 8px;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: #333;
+  background: var(--color-background); /* Gradient background for the entire page */
+  padding: 1rem;
+  font-size: 16px;
+}
+
+/* Enhanced Typography */
+h1, h2, h3, h4 {
+  font-family: var(--font-secondary);
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+  letter-spacing: 1px;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none; /* Removes default underlining for links */
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+/* Container Styling */
+.container {
+  max-width: 1200px; /* Limits container width to ensure content doesn't stretch too wide on large screens */
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: var(--color-content-bg);
+  border-radius: var(--border-radius); /* Rounds the corners of the container */
+  box-shadow: var(--shadow-light);
+}
+/* Common styles for all titles */
+.container h2 {
+  display: inline-block; /* Make the box only as wide as the content */
+  padding: 10px 20px; /* Adjust padding for spacing */
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #c84e91, #a0c9e8); /* Light blue to soft blue gradient */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+header {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+  box-shadow: var(--shadow-medium);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+  margin-top: 1rem;
+  color: #000000;
+}
+
+/* Navigation Styling */
+nav {
+  margin-top: -1rem;
+  background: var(--color-background);
+  box-shadow: var(--shadow-light);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+main {
+  margin-top: 2rem;
+  display: grid; /* Sets up a grid layout for content sections */
+  grid-template-rows: auto;
+  gap: 2rem; /* Adds space between content sections */
+  background: linear-gradient(135deg, #f8ffae, var(--color-accent));
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow-light);
+}
+
+main .content-left,
+main .content-right {
+  background-color: var(--color-content-bg);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  display: flex; /* Flexbox layout for centering content within these sections */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+main .content-left:hover,
+main .content-right:hover {
+  transform: scale(1.05); /* Slightly scales up the element */
+  box-shadow: var(--shadow-medium); /* Enhance shadow to create a lift effect */
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--color-text-primary);
+  margin-bottom: 1.5rem;
+}
+
+blockquote {
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-left: 5px solid var(--color-primary);
+  font-style: italic;
+}
+
+/* List Styling */
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.75rem;
+}
+
+/* Footer Styling */
+.page-footer {
+  background: var(--color-accent);
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: 2rem;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 90%);
+}
+
+.page-footer a {
+  color: #2d8a89;
+  transition: color 0.3s ease;
+}
+
+.page-footer a:hover {
+  color: #fff;
+}
+
+.page-footer ul {
+  list-style: none;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.page-footer ul li {
+  margin: 0 1.5rem;
+}
+
+/* Profile Section */
+.profile {
+  background: linear-gradient(135deg, #f8ffae, var(--color-accent));
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow-light);
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two-column layout for profile section */
+  gap: 2rem;
+}
+
+.profile h4 {
+  margin-bottom: 1rem;
+  grid-column: span 2;
+}
+
+.profile ul {
+  list-style: none;
+}
+
+.profile ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+/* Features Section */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three-column layout for features section */
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.features li {
+  background: linear-gradient(135deg, #fcb69f, #ff9a9e);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  transition: background 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+.features li:hover {
+  background-color: #ff8c8c;
+  transform: translateY(-5px); /* Lifts the item slightly on hover */
+}
+
+.features li:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  background: var(--color-primary);
+  border-radius: 20%;
+  box-shadow: var(--shadow-light);
+}
+
+/* Mobile First */
+body {
+  font-size: 16px;
+}
+/*Media query for small screens*/
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .profile, .features {
+    grid-template-columns: 1fr; /* Stack content on top of each other */
+    gap: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .content-left, .content-right {
+    width: 100%; /* Ensure they don't overflow */
+  }
+}
+
+/* Larger Screens */
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+    padding: 2rem;
+  }
+
+  header h1 {
+    font-size: 3rem;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+  }
+
+  .container {
+    padding: 2rem;
+    max-width: 1400px;
+  }
+  
+  .profile {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Buttons with Hover Effect */
+.button {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-3px);
+}
+/* Button Styling */
+.link-github {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  padding: var(--spacing-small) var(--spacing-medium);
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: var(--shadow-light);
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--font-secondary);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* SVG Icon Styling */
+.link-github svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  fill: #fff; /* Ensures the icon color matches the text */
+}
+
+/* Hover Effect */
+.link-github:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-3px);
+}
